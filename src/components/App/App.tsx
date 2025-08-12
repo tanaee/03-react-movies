@@ -6,7 +6,7 @@ import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import MovieModal from '../MovieModal/MovieModal';
 import { fetchMovies } from '../../services/movieService';
 import type { Movie } from '../../types/movie';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast'; // ⬅ додано Toaster
 
 export default function App() {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -45,6 +45,7 @@ export default function App() {
           onClose={() => setSelectedMovie(null)}
         />
       )}
+      <Toaster />
     </>
   );
 }
